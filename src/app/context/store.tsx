@@ -56,7 +56,11 @@ const GlobalContext = createContext<ContextProps>({
   editTask: (): any => {},
 });
 
-export const GlobalContextProvider = ({ children }) => {
+export const GlobalContextProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   const router = useRouter();
   const [tasks, setTasks] = useState<[] | DataType[]>([]);
   const [task, setTask] = useState<{} | any>({});
